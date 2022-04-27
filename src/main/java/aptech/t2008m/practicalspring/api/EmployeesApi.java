@@ -17,12 +17,12 @@ public class EmployeesApi {
     EmployeesService employeesService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Employees>> findAll() {
+    public ResponseEntity<List<Employees>> findAllEmployees() {
         return ResponseEntity.ok(employeesService.findAllEmployees());
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Employees> save(@RequestBody Employees employees) {
+    public ResponseEntity<Employees> createEmployee(@RequestBody Employees employees) {
         return ResponseEntity.status(HttpStatus.CREATED).body(employeesService.createEmployee(employees));
     }
 }
